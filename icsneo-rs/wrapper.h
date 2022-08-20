@@ -73,6 +73,8 @@ typedef uint8_t neonettype_t;
 #define ICSNEO_DEVICETYPE_VIVIDCAN ((devicetype_t)0x40000000)
 #define ICSNEO_DEVICETYPE_OBD2_SIM ((devicetype_t)0x80000000)
 
+#pragma pack(push, 1)
+
 typedef struct {
 	devicehandle_t device; // Pointer back to the C++ device object
 	neodevice_handle_t handle; // Handle for use by the underlying driver
@@ -138,6 +140,8 @@ typedef enum _neoio_t {
 	ICSNEO_IO_MISC = (4),
 	ICSNEO_IO_EMISC = (5),
 } neoio_t;
+
+#pragma pack(pop)
 
 /**
  * \brief Find Intrepid hardware connected via USB and Ethernet.
