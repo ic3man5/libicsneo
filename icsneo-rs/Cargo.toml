@@ -5,12 +5,14 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+name = "icsneo-example"
+path = "src/bin/example.rs"
+
 [build-dependencies]
 bindgen = "0.60.1"
 cmake = "0.1.48"
 path-clean = "0.1.0"
 
 [dependencies]
-path-clean = "0.1.0"
-
-
+libc = "0.2.132"

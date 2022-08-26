@@ -829,11 +829,14 @@ extern size_t DLLExport icsneo_getEventLimit(void);
 
 /**
  * \brief Get the devices supported by the current version of the API
+ * 
  * \param[out] devices A pointer to a buffer of devicetype_t structures which will be written to.
  * NULL can be passed, which will write the current supported device count to count.
+ * 
  * \param[inout] count A pointer to a size_t which, prior to the call,
  * holds the maximum number of devicetype_t structures to be written,
  * and after the call holds the number of devicetype_t structures written.
+ * 
  * \returns True if devices was written to
  *
  * See icsneo_getProductNameForType() to get textual descriptions of each device.
@@ -841,6 +844,7 @@ extern size_t DLLExport icsneo_getEventLimit(void);
  * A query for length (`devices == NULL`) will return false.
  *
  * If the count provided is not large enough, the output will be truncated.
+ * 
  * An icsneo::APIEvent::OutputTruncatedError will be available in icsneo_getLastError() in this case.
  * True will still be returned.
  */

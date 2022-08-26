@@ -1,3 +1,4 @@
+#![windows_subsystem = "console"]
 extern crate bindgen;
 extern crate cmake;
 extern crate path_clean;
@@ -18,8 +19,10 @@ fn main() {
         .build();
     // Debug output for lib path
     println!("cargo:warning=icsneoc.lib search path: {:?}", dst.join("build/Debug").display());
+    println!("cargo:warning=icsneoc.lib search path: {:?}", dst.join("build/Release").display());
     // Configure the search path and lib name to link to
     println!("cargo:rustc-link-search=native={}", dst.join("build/Debug").display());
+    println!("cargo:rustc-link-search=native={}", dst.join("build/Release").display());
     println!("cargo:rustc-link-lib=static=icsneoc");
 
     // lets generate the bindings
